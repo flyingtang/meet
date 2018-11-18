@@ -1,5 +1,4 @@
-[项目设计图](https://github.com/txg5214/meet/tree/master/img/mind.png
-)
+![项目设计图](https://github.com/txg5214/meet/tree/master/img/mind.png)
 
 整个项目分为 
 * 手机h5
