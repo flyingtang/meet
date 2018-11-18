@@ -1,0 +1,14 @@
+.vscode
+
+vendor/*
+api/vendor/*
+
+gateway/vendor/*
+gateway/.ieda
+
+*.iml
+*.xml
+*.sum
+
+/vendor
+/h5/node_modules
