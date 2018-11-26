@@ -7,7 +7,7 @@ import NewsList from  "./NewsList"
 import ArticleList from "./Article"
 import {menus} from "./menus.json"
 import history from './history';
-
+import Article from "./Article"
 
 export default class Layout extends React.Component {
       state = {
@@ -67,6 +67,7 @@ export default class Layout extends React.Component {
                 <Route exact path="/" component={Home} />
                 <Route  path="/news" component={NewsList} />
                 <Route  path="/articles" component={ArticleList} />
+                <Route  path="/article/:id" component={Article} />
             </Drawer>
         </div>
         </Router>

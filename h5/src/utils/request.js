@@ -38,7 +38,7 @@ const prefixUrl = "/api/v1"
 
 export  async function find (url, filter) {
 
-    url = `${url}?filter=${JSON.stringify(filter)}`
-    console.log(url, "uuu")
+    url = filter ?`${url}?filter=${JSON.stringify(filter)}`:url;
     return await request(url, {method: "GET"})
 }
+

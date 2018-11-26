@@ -54,20 +54,7 @@ export default class Demo extends React.Component {
   }
 
   componentDidMount() {
-    // you can scroll to the specified position
-    // setTimeout(() => this.lv.scrollTo(0, 120), 800);
-
     const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
-    // simulate initial Ajax
-    // setTimeout(() => {
-    //   genData();
-    //   this.setState({
-    //     dataSource: this.state.dataSource.cloneWithRowsAndSections(dataBlobs, sectionIDs, rowIDs),
-    //     isLoading: false,
-    //     height: hei,
-    //   });
-    // }, 600);
-
     this.fetch(prefixUrl,{page: pageIndex+1})
   }
 
@@ -99,7 +86,13 @@ export default class Demo extends React.Component {
     this.fetch(prefixUrl,{page: pageIndex+1})
   }
 
+  onRowClicked = (item) => {
+    console.log(item);
+   this.props.history.push(`${prefixUrl}/${item.id}`)
+  }
+
   render() {
+    console.log(this,"1010101191919")
     const separator = (sectionID, rowID) => (
       <div
         key={`${sectionID}-${rowID}`}
@@ -115,7 +108,7 @@ export default class Demo extends React.Component {
     const row = (rowData, sectionID, rowID) => {
       const item= this.state.data[index--];
       return (
-        <div key={rowID} className="body">
+        <div key={rowID} className="body" onClick={this.onRowClicked.bind(this, item)}>
               <WingBlank size="lg">
                 <div className="card">
                     <div><img width="100" height="80" src={item && item.mainPic}/></div>
